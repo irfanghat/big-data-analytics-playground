@@ -1,2 +1,1 @@
-# big-analytics-playground
-Big Data Analytics Playground.
+* Big Data Analytics Playground.
