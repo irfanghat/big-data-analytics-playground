@@ -65,6 +65,7 @@ services:
       - "9083:9083"
     volumes:
       - ./conf/hive-site-metastore.xml:/opt/hive/conf/hive-site.xml:ro
+      - ./datasets:/opt/hive/data/warehouse
     networks: [lake]
     healthcheck:
       test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9083'"]
