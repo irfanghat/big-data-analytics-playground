@@ -152,6 +152,7 @@ activemq-data/
 # Environments
 .env
 .envrc
+hadoop.env
 .venv
 env/
 venv/
@@ -221,3 +222,5 @@ __marimo__/
 
 # Datasets
 UNSW-NB15.csv
+
+jars/
