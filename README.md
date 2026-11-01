@@ -48,5 +48,5 @@ You can run the setup script:
 Run the following script to verify that Hive is up and running and configured correctly:
 
 ```sh
-
+./scripts/check-hive
 ```
