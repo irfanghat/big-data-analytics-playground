@@ -65,7 +65,7 @@ services:
       - "9083:9083"
     volumes:
       - ./conf/hive-site-metastore.xml:/opt/hive/conf/hive-site.xml:ro
-      - ./datasets:/opt/hive/data/warehouse
+      # - ./datasets:/opt/hive/data/warehouse
     networks: [lake]
     healthcheck:
       test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9083'"]
@@ -112,6 +112,7 @@ services:
     ports:
       - "8080:8080"
       - "7077:7077"
+      - "10001:10001"
     volumes:
       - ./conf/hive-site-client.xml:/opt/spark/conf/hive-site.xml:ro
       - ./conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
@@ -122,7 +123,7 @@ services:
     container_name: spark-worker
     hostname: spark-worker
     depends_on: [spark-master]
-    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077", "--cores", "2", "--memory", "2g"]
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077", "--cores", "2", "--memory", "5g"]
     environment:
       HADOOP_USER_NAME: root
     ports:

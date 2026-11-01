@@ -32,3 +32,21 @@ This pulls the offical images.
 docker compose up
 ```
 
+#### Alternatively
+
+> Note the scripts need to be modified via `chmod u+x scripts/*.sh` before running the scripts.
+You can run the setup script:
+
+```sh
+./scripts/setup.sh
+# This will run docker compose config & docker compose pull which checks 
+# for any issues with the compose configuration and pulls the required images...
+```
+
+### Verify Hive Runtime
+
+Run the following script to verify that Hive is up and running and configured correctly:
+
+```sh
+
+```
