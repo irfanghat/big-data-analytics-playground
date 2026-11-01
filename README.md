@@ -32,7 +32,7 @@ This pulls the offical images.
 docker compose up
 ```
 
-#### Alternatively
+#### Setting up the project
 
 > Note the scripts need to be modified via `chmod u+x scripts/*.sh` before running the scripts.
 You can run the setup script:
@@ -43,10 +43,34 @@ You can run the setup script:
 # for any issues with the compose configuration and pulls the required images...
 ```
 
-### Verify Hive Runtime
-
-Run the following script to verify that Hive is up and running and configured correctly:
+### Download the required datasets
 
 ```sh
-./scripts/check-hive
+./scripts/download-datasets.sh
+```
+
+### Verify Hive Runtime
+
+Run the following script, after running `docker compose up` and **making sure all services are healthy/running**, to verify that Hive is up and running and configured correctly:
+
+```sh
+./scripts/check-hive-runtime.sh
+```
+
+### Load data to HDFS
+
+```sh
+./scripts/load-data.sh
+```
+
+### Create a catalog
+
+```sh
+./scripts/create-catalog.sh
+```
+
+### Run queries against the Dataset
+
+```sh
+./scripts/query-hive.sh
 ```
